@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  
+    <!-- CDN link of jQuery -->
+    <script src=
+    "https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity=
+"sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+        crossorigin="anonymous">
+    </script>
+</head>
+  
+<body>
+  
+    <!-- Both buttons that will hide
+        or show the image -->
+    <button id="show">Show image</button>
+    <button id="hide">Hide image</button>
+  
+    <!-- Image that will follow the 
+        commands accordingly -->
+    <img id="image" src="assets/coca-cola.webp"
+        alt="Photo">
+  
+    <!-- Code for hiding or showing image 
+        on button click -->
+    <script>
+        $(document).ready(function () {
+            $("#image").hide();
+            $("#hide").attr('disabled', true);
+            $("#hide").click(function () {
+                $("#image").hide();
+                $("#hide").attr('disabled', true);
+                $("#show").attr('disabled', false);
+  
+            });
+            $("#show").click(function () {
+                $("#image").show();
+                $("#hide").attr('disabled', false);
+                $("#show").attr('disabled', true);
+            });
+        });
+    </script>
+</body>
+  
+</html>
